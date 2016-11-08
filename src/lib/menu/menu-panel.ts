@@ -4,6 +4,7 @@ import {MenuPositionX, MenuPositionY} from './menu-positions';
 export interface MdMenuPanel {
   positionX: MenuPositionX;
   positionY: MenuPositionY;
+  overlayTrigger: boolean;
   templateRef: TemplateRef<any>;
   close: EventEmitter<void>;
   focusFirstItem: () => void;

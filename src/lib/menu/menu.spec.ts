@@ -321,6 +321,7 @@ class PositionedMenu {
 class CustomMenuPanel implements MdMenuPanel {
   positionX: MenuPositionX = 'after';
   positionY: MenuPositionY = 'below';
+  overlayTrigger: true;
 
   @ViewChild(TemplateRef) templateRef: TemplateRef<any>;
   @Output() close = new EventEmitter<void>();

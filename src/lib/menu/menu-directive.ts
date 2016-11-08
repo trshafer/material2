@@ -49,15 +49,18 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
 
   /** Position of the menu in the Y axis. */
   positionY: MenuPositionY = 'below';
+  overlayTrigger = true;
 
   @ViewChild(TemplateRef) templateRef: TemplateRef<any>;
   @ContentChildren(MdMenuItem) items: QueryList<MdMenuItem>;
 
   constructor(@Attribute('x-position') posX: MenuPositionX,
-              @Attribute('y-position') posY: MenuPositionY) {
+              @Attribute('y-position') posY: MenuPositionY,
+              @Attribute('overlay-trigger') trigger = true) {
     if (posX) { this._setPositionX(posX); }
     if (posY) { this._setPositionY(posY); }
     this.setPositionClasses(this.positionX, this.positionY);
+    this.overlayTrigger = trigger;
   }
 
   ngAfterContentInit() {
